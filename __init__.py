@@ -1,5 +1,4 @@
-from rbitra import db
-from rbitra.models import Member, Organization, OrgMember
+from rbitra.org_utils import add_member_to_org_by_uuid
 import marshmallow
 
 details = {
@@ -10,12 +9,7 @@ details = {
 }
 
 def add_member_to_org(arguments):
-    member = Member.query(uuid=arguments["member"]).first()
-    org = Organization.query(uuid=arguments["org"]).first()
-    assoc = OrgMember(org, member)
-    db.session.add(assoc)
-    db.session.commit()
-
+    add_member_to_org_by_uuid(uuid=arguments["member"], arguments["org"])
 
 class AddMemberToOrgArgSchema(marshmallow.Schema):
     member = marshmallow.fields.UUID()
