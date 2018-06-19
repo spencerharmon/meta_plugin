@@ -34,7 +34,7 @@ valid_actions = {
     "add_member_to_org": {
         "description": "Add Member to Organization",
         "arg_schema": AddMemberToOrgArgSchema,
-        "action": add_member_to_org
+        "action": add_member_to_org,
         "mod_role_req": True
     }
 }
