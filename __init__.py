@@ -9,7 +9,7 @@ details = {
 }
 
 def add_member_to_org(arguments):
-    add_member_to_org_by_uuid(uuid=arguments["member"], arguments["org"])
+    add_member_to_org_by_uuid(arguments["member"], arguments["org"])
 
 class AddMemberToOrgArgSchema(marshmallow.Schema):
     member = marshmallow.fields.UUID()
