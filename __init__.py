@@ -8,7 +8,7 @@ details = {
     'class_name': 'MetaPlugin'
 }
 
-def add_member_to_org(arguments):
+def add_member_to_org(arguments, **kwargs):
     add_member_to_org_by_uuid(arguments["member"], arguments["org"])
 
 class AddMemberToOrgArgSchema(marshmallow.Schema):
